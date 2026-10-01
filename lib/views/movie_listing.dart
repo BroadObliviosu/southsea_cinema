@@ -3,7 +3,6 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
-  //means that values can update while its running
   const MovieListing({super.key});
 
   @override
@@ -45,7 +44,7 @@ class _MovieListingState extends State<MovieListing> {
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                
               )
               ),
               const SizedBox(height: 20),
@@ -55,10 +54,44 @@ class _MovieListingState extends State<MovieListing> {
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                
               )
               ),
-              const SizedBox(height: 20),
+
+
+            const SizedBox(height: 20),
+
+            const Text (
+              'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets ',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20,
+                
+              )
+              ),
+
+            const SizedBox(height: 20),
+
+            const Text (
+              'Select Quantities (Up to 5 in total)',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20,
+                
+              )
+              ),
+
+            const SizedBox(height: 40),
+
+            const Text (
+              'Tickets',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                
+              )
+              ),
 
             DropdownMenu<int>(
               initialSelection: 1,
