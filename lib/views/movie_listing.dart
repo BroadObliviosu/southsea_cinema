@@ -15,7 +15,14 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: Container(
+        child: Column(
+          children: const [ //const means the value wont change
+             Text('Dracula'),
+             Text('A vampire story.'),
+          ],
+        ),
+      ),
     );
   }
 }
