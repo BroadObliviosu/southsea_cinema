@@ -24,12 +24,41 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
+
       body: Container(
         child: Column(
           children:  [
             //const means the value wont change
-            const Text ('Dracula'),
-            const Text ('A vampire story.'),
+            const Text(
+              'Dracula (1931) (PG)',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+              
+              ),
+              const SizedBox(height: 20),
+
+            const Text (
+              'Southsea Cinema Room',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )
+              ),
+              const SizedBox(height: 20),
+
+            const Text (
+              'Thursday 22nd Oct 2026, 18:00 - ends at 19:14',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )
+              ),
+              const SizedBox(height: 20),
 
             DropdownMenu<int>(
               initialSelection: 1,
