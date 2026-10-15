@@ -1,0 +1,25 @@
+class Movie {
+  final String id; //final means value cant be reassigned
+  final String title;
+  final String synopsis;
+  final String ageRating;
+  final String runtime;
+  final String screeningTime;
+  final double ticketPrice;
+  final String posterImagePath;
+
+  Movie({
+    required this.id,
+    required this.title,
+    required this.synopsis,
+    required this.ageRating,
+    required this.runtime,
+    required this.screeningTime,
+    required this.ticketPrice,
+    required this.posterImagePath,
+  });
+}
+
+
+
+
