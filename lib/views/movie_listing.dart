@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movies.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -23,10 +26,10 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-
       body: Container(
+        color: cinemaBackground,
         child: Column(
-          children:  [
+          children: [
             //const means the value wont change
             const Text(
               'Dracula (1931) (PG)',
@@ -35,63 +38,58 @@ class _MovieListingState extends State<MovieListing> {
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
-              
-              ),
-              const SizedBox(height: 20),
+            ),
+            const SizedBox(height: 20),
 
-            const Text (
+            const Text(
               'Southsea Cinema Room',
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 20,
-                
-              )
               ),
-              const SizedBox(height: 20),
+            ),
+            const SizedBox(height: 20),
 
-            const Text (
+            const Text(
               'Thursday 22nd Oct 2026, 18:00 - ends at 19:14',
               style: TextStyle(
                 color: cinemaFontWhite,
                 fontSize: 20,
-                
-              )
               ),
+            ),
 
+            Text(
+              widget.movie.formattedPrice,
+              style: const TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 20, //
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            const Text(
+                'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets ',
+                style: TextStyle(
+                  color: cinemaFontWhite,
+                  fontSize: 20,
+                )),
 
             const SizedBox(height: 20),
 
-            const Text (
-              'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets ',
-              style: TextStyle(
-                color: cinemaFontWhite,
-                fontSize: 20,
-                
-              )
-              ),
-
-            const SizedBox(height: 20),
-
-            const Text (
-              'Select Quantities (Up to 5 in total)',
-              style: TextStyle(
-                color: cinemaFontWhite,
-                fontSize: 20,
-                
-              )
-              ),
+            const Text('Select Quantities (Up to 5 in total)',
+                style: TextStyle(
+                  color: cinemaFontWhite,
+                  fontSize: 20,
+                )),
 
             const SizedBox(height: 40),
 
-            const Text (
-              'Tickets',
-              style: TextStyle(
-                color: cinemaFontWhite,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                
-              )
-              ),
+            const Text('Tickets',
+                style: TextStyle(
+                  color: cinemaFontWhite,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                )),
 
             DropdownMenu<int>(
               initialSelection: 1,
@@ -112,7 +110,7 @@ class _MovieListingState extends State<MovieListing> {
             ),
 
             ElevatedButton(
-              onPressed:() {
+              onPressed: () {
                 setState(() {
                   _feedback = '$_quantity ticket(s) added to order.';
                 });
@@ -120,9 +118,7 @@ class _MovieListingState extends State<MovieListing> {
               child: const Text('Add to Order'),
             ),
             Text(_feedback),
-
           ],
-
         ),
       ),
     );

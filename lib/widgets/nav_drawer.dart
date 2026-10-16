@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 
+
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
 

@@ -3,6 +3,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
 
+
 void main() {
   runApp(const SouthseaCinemaApp());
 }
@@ -26,7 +27,9 @@ class SouthseaCinemaApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeView(),
-        '/listing': (context) => const MovieListing(),
+        '/listing': (context) => MovieListing(
+          movie: ModalRoute.of(context)!.settings.arguments as dynamic,
+        ),
       },
     );
   }
