@@ -57,10 +57,8 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          appTitle,
-          style: cinemaHeaderStyle,
-          ),
+        title: const Text(appTitle),//appBarTheme in main.dart takes over.
+
         backgroundColor: cinemaSurface,
         iconTheme: const IconThemeData(color: cinemaBrand),
         elevation: 0,
