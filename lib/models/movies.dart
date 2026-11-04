@@ -8,7 +8,7 @@ class Movie {
   final double ticketPrice;
   final String posterImagePath;
 
-  Movie({
+ const Movie({
     required this.id,
     required this.title,
     required this.synopsis,
