@@ -45,6 +45,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:southsea_cinema/widgets/basket_button.dart';
 
 
 class HomeView extends StatelessWidget {
@@ -58,7 +59,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle),//appBarTheme in main.dart takes over.
-
+        actions: const [BasketButton()],
         backgroundColor: cinemaSurface,
         iconTheme: const IconThemeData(color: cinemaBrand),
         elevation: 0,
