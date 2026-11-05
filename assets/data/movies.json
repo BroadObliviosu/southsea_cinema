@@ -1,0 +1,16 @@
+[
+  {
+    "id": "Obsession (2026)",
+    "title": "Obsession",
+    "description": "Your existing film description",
+    "ticketPrice": 7.50,
+    "imagePath": "assets/images/obsession.jpg"
+  },
+  {
+    "id": "The Odyssey (2026)",
+    "title": "The Odyssey",
+    "description": "Your existing film description",
+    "ticketPrice": 8.50,
+    "imagePath": "assets/images/the_odyssey.jpg"
+  }
+]
