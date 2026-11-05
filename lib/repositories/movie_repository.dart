@@ -1,8 +1,18 @@
 import 'package:southsea_cinema/models/movies.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
 
 class MovieRepository {
+
+  List<Movie>? _cachedMovies;
+
   List<Movie> getMovies() {
     //get the list from the movies.dart.
+    final List<Movie>? cachedMovies = _cachedMovies;
+      if (cachedMovies != null) {
+        return cachedMovies;
+      }
     return [
       Movie(
         id: 'fim001',
@@ -37,4 +47,23 @@ class MovieRepository {
     }
     return null;
   } //lets an app find its movie using the IP
+
+Future<List<Movie>> loadMoviesFromAsset({
+  String assetPath = 'assets/data/movies.json',
+}) async {
+  final String jsonString = await rootBundle.loadString(assetPath);
+  final dynamic decodedData = jsonDecode(jsonString);
+  final List<dynamic> jsonList = decodedData as List<dynamic>;
+  final List<Movie> loadedMovies = [];
+
+  for (final dynamic item in jsonList) {
+    final Map<String, dynamic> itemMap = item as Map<String, dynamic>;
+    final Movie movie = Movie.fromJson(itemMap);
+    loadedMovies.add(movie);
+  }
+
+  _cachedMovies = loadedMovies;
+  return loadedMovies;
+}
+
 }
