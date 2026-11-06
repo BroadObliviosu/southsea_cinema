@@ -18,7 +18,6 @@ class MovieListing extends StatefulWidget {
 
 class _MovieListingState extends State<MovieListing> {
   int _quantity = 1;
-  String _feedback = '';
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +125,6 @@ class _MovieListingState extends State<MovieListing> {
                 );
 
                 setState(() {
-                  _feedback = '$_quantity ticket(s) added to order.';
                 });
               },
             ),
